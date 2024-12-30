@@ -13,19 +13,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 - Infra", "04 - Infra", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 - Test", "05 - Test", "{448ED0BD-3954-4C89-BC83-E8F98A410C98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallengeFase02.Tests", "TechChallengeFase02.Tests\TechChallengeFase02.Tests.csproj", "{6FE83858-5FEF-4B28-949A-1BB58057B318}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallengeFase02.Tests", "TechChallengeFase02.Tests\TechChallengeFase02.Tests.csproj", "{6FE83858-5FEF-4B28-949A-1BB58057B318}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallangeFase02.Infra.Data", "TechChallangeFase02.Infra.Data\TechChallangeFase02.Infra.Data.csproj", "{ADFBCA88-F6F9-46C9-802D-25B95469ACF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallangeFase02.Infra.Data", "TechChallangeFase02.Infra.Data\TechChallangeFase02.Infra.Data.csproj", "{ADFBCA88-F6F9-46C9-802D-25B95469ACF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallangeFase02.Infra.IoC", "TechChallangeFase02.Infra.IoC\TechChallangeFase02.Infra.IoC.csproj", "{8A69A8FD-0A84-425B-9BFA-9C45EB2F8BA1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallangeFase02.Infra.IoC", "TechChallangeFase02.Infra.IoC\TechChallangeFase02.Infra.IoC.csproj", "{8A69A8FD-0A84-425B-9BFA-9C45EB2F8BA1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallangeFase02.Domain.Core", "TechChallangeFase02.Domain.Core\TechChallangeFase02.Domain.Core.csproj", "{4D0ABC63-608D-4A58-8515-60D66E236615}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallangeFase02.Domain.Core", "TechChallangeFase02.Domain.Core\TechChallangeFase02.Domain.Core.csproj", "{4D0ABC63-608D-4A58-8515-60D66E236615}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallangeFase02.Domain", "TechChallangeFase02.Domain\TechChallangeFase02.Domain.csproj", "{7029D5DB-5D55-432F-A0DB-5A04B6D23100}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallangeFase02.Domain", "TechChallangeFase02.Domain\TechChallangeFase02.Domain.csproj", "{7029D5DB-5D55-432F-A0DB-5A04B6D23100}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallangeFase02.Application", "TechChallangeFase02.Application\TechChallangeFase02.Application.csproj", "{3A721D22-DD92-47F2-A87C-028DFFA3D8EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallangeFase02.Application", "TechChallangeFase02.Application\TechChallangeFase02.Application.csproj", "{3A721D22-DD92-47F2-A87C-028DFFA3D8EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallangeFase02.Api", "TechChallangeFase02.Api\TechChallangeFase02.Api.csproj", "{68325352-1089-41F9-83A8-8C39B84570EE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallangeFase02.Api", "TechChallangeFase02.Api\TechChallangeFase02.Api.csproj", "{68325352-1089-41F9-83A8-8C39B84570EE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallengeFase02.IntegrationTests", "TechChallengeFase02.IntegrationTests\TechChallengeFase02.IntegrationTests.csproj", "{10740C53-D3AF-4A9C-AAB4-A29F4AD74857}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{68325352-1089-41F9-83A8-8C39B84570EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68325352-1089-41F9-83A8-8C39B84570EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68325352-1089-41F9-83A8-8C39B84570EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10740C53-D3AF-4A9C-AAB4-A29F4AD74857}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10740C53-D3AF-4A9C-AAB4-A29F4AD74857}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10740C53-D3AF-4A9C-AAB4-A29F4AD74857}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10740C53-D3AF-4A9C-AAB4-A29F4AD74857}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -73,6 +79,7 @@ Global
 		{7029D5DB-5D55-432F-A0DB-5A04B6D23100} = {4E74C0CF-824A-4CBF-AED9-C51A7B0883BD}
 		{3A721D22-DD92-47F2-A87C-028DFFA3D8EE} = {C717E3FA-B567-43C9-8E22-FD51F76FFBDA}
 		{68325352-1089-41F9-83A8-8C39B84570EE} = {80CDBD46-BF5B-4C79-B47D-AB746F1664BE}
+		{10740C53-D3AF-4A9C-AAB4-A29F4AD74857} = {448ED0BD-3954-4C89-BC83-E8F98A410C98}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1D0A38F3-6D95-45DB-A47A-561154719CB7}
