@@ -20,7 +20,8 @@ jobs:
     env:
       Solution_Name: src\TechChallangeFase02.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
       Test_Project_Path: src\TechChallengeFase02.Tests\TechChallengeFase02.Tests.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-    
+      Integration_Test_Project_Path: src\TechChallengeFase02.Tests\TechChallengeFase02.IntegrationTests.csproj
+      
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -52,6 +53,9 @@ jobs:
     # Execute all unit tests in the solution
     - name: Execute unit tests
       run: dotnet test $env:Test_Project_Path
+      
+    - name: Execute Integration tests
+      run: dotnet test $env:Integration_Test_Project_Path    
 
     # Upload the build artifacts
     - name: Upload build artifacts
