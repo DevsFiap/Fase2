@@ -27,7 +27,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallangeFase02.Applica
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallangeFase02.Api", "TechChallangeFase02.Api\TechChallangeFase02.Api.csproj", "{68325352-1089-41F9-83A8-8C39B84570EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechChallengeFase02.IntegrationTests", "TechChallengeFase02.IntegrationTests\TechChallengeFase02.IntegrationTests.csproj", "{10740C53-D3AF-4A9C-AAB4-A29F4AD74857}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallengeFase02.IntegrationTests", "TechChallengeFase02.IntegrationTests\TechChallengeFase02.IntegrationTests.csproj", "{10740C53-D3AF-4A9C-AAB4-A29F4AD74857}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
