@@ -20,7 +20,7 @@ jobs:
     env:
       Solution_Name: src\TechChallangeFase02.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
       Test_Project_Path: src\TechChallengeFase02.Tests\TechChallengeFase02.Tests.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-      Integration_Test_Project_Path: src\TechChallengeFase02.Tests\TechChallengeFase02.IntegrationTests.csproj
+      Integration_Test_Project_Path: src\TechChallengeFase02.IntegrationTests\TechChallengeFase02.IntegrationTests.csproj
       
     steps:
     - name: Checkout
