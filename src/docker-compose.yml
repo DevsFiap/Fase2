@@ -16,14 +16,36 @@ services:
 
   app:
     build:
-      context: .
-      dockerfile: Dockerfile
+      context: C:/Projetos/Pos/Fase2/src
+      dockerfile: C:/Projetos/Pos/Fase2/src/TechChallangeFase02.Api/Dockerfile
     depends_on:
       - sqlserver
     networks:
       - test-network
     ports:
-      - "5000:80"
+    - "8080:80"
+    - "8081:443"
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - test-network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    ports:
+      - "3000:3000"
+    networks:
+      - test-network
 
 networks:
   test-network:

@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallangeFase02.Api", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechChallengeFase02.IntegrationTests", "TechChallengeFase02.IntegrationTests\TechChallengeFase02.IntegrationTests.csproj", "{10740C53-D3AF-4A9C-AAB4-A29F4AD74857}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{94DDBA3D-874A-4882-9833-F40F7AD38185}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +69,10 @@ Global
 		{10740C53-D3AF-4A9C-AAB4-A29F4AD74857}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10740C53-D3AF-4A9C-AAB4-A29F4AD74857}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10740C53-D3AF-4A9C-AAB4-A29F4AD74857}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94DDBA3D-874A-4882-9833-F40F7AD38185}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94DDBA3D-874A-4882-9833-F40F7AD38185}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94DDBA3D-874A-4882-9833-F40F7AD38185}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94DDBA3D-874A-4882-9833-F40F7AD38185}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
