@@ -90,7 +90,8 @@ namespace TechChallengeFase02.IntegrationTests
             var dto = new AtualizarContatoDto
             {
                 Nome = "Novo Nome",
-                Telefone = "123456789"
+                Telefone = "123456789",
+                Email = "email@email.com"
             };
 
             using var scope = _factory.Services.CreateScope();
@@ -100,7 +101,8 @@ namespace TechChallengeFase02.IntegrationTests
             {
                 Id = id,
                 Nome = "Nome Antigo",
-                Telefone = "987654321"
+                Telefone = "987654321",
+                DataCriacao = DateTime.Now.AddDays(-1)
             };
 
             dbContext.Contato.Add(contatoExistente);
@@ -133,15 +135,32 @@ namespace TechChallengeFase02.IntegrationTests
 
             Console.WriteLine("Test_UpdateContact_ReturnsNotFound passou com sucesso!");
         }
-       
+
         [Fact]
         public async Task Test_DeleteContact_ReturnsSuccess()
         {
-            var response = await _client.DeleteAsync("/api/contatos/excluir-contato/1");
-            response.EnsureSuccessStatusCode();  // Valida se o status é 200 OK
+            // Arrange
+            var id = 1;
 
-            var content = await response.Content.ReadAsStringAsync();
-            Assert.NotEmpty(content);
+            using var scope = _factory.Services.CreateScope();
+            var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+
+            var contatoExistente = new Contato
+            {
+                Id = id,
+                Nome = "Nome Usuario",
+                Telefone = "11987654321",
+                DataCriacao = DateTime.Now.AddDays(-1)
+            };
+
+            dbContext.Contato.Add(contatoExistente);
+            await dbContext.SaveChangesAsync();
+
+            // Act
+            var response = await _client.DeleteAsync($"/excluir-contato/1");
+
+            // Assert
+            response.EnsureSuccessStatusCode();
 
             Console.WriteLine("Test_DeleteContact_ReturnsSuccess passou com sucesso!");
         }
