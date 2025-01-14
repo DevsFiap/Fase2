@@ -40,7 +40,7 @@ jobs:
 
     # Build the application
     - name: Build the application
-      run: msbuild ${{ env.Solution_Name }} /p:Configuration=${{ matrix.configuration }} 
+      run: dotnet build ${{ env.Solution_Name }} --configuration ${{ matrix.configuration }} 
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
