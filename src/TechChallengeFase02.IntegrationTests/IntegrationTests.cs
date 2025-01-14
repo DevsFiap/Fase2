@@ -51,7 +51,7 @@ namespace TechChallengeFase02.IntegrationTests
             var jsonData = JsonConvert.SerializeObject(new 
             { 
                 Nome = "Nome Usuario",
-                Telefone = "78389945578",
+                Telefone = "11987654327",
                 Email = "user@example.com"
             });
             HttpContent httpContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
@@ -86,11 +86,11 @@ namespace TechChallengeFase02.IntegrationTests
         public async Task Test_UpdateContact_ReturnsSuccess()
         {
             // Arrange
-            var id = 1; 
+            var id = 1;
             var dto = new AtualizarContatoDto
             {
                 Nome = "Novo Nome",
-                Telefone = "123456789",
+                Telefone = "11987654321",
                 Email = "email@email.com"
             };
 
@@ -101,7 +101,7 @@ namespace TechChallengeFase02.IntegrationTests
             {
                 Id = id,
                 Nome = "Nome Antigo",
-                Telefone = "987654321",
+                Telefone = "11987654321",
                 DataCriacao = DateTime.Now.AddDays(-1)
             };
 
@@ -118,6 +118,7 @@ namespace TechChallengeFase02.IntegrationTests
 
             Console.WriteLine("Test_UpdateContact_ReturnsSuccess passou com sucesso!");
         }
+
 
         [Fact]
         public async Task Test_UpdateContact_ReturnsError()
