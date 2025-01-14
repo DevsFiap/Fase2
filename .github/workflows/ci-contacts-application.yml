@@ -18,9 +18,9 @@ jobs:
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
 
     env:
-      Solution_Name: src\TechChallangeFase02.sln                         # Replace with your solution name, i.e. MyWpfApp.sln.
-      Test_Project_Path: src\TechChallengeFase02.Tests\TechChallengeFase02.Tests.csproj                 # Replace with the path to your test project, i.e. MyWpfApp.Tests\MyWpfApp.Tests.csproj.
-      Integration_Test_Project_Path: src\TechChallengeFase02.IntegrationTests\TechChallengeFase02.IntegrationTests.csproj
+      Solution_Name: src/TechChallangeFase02.sln  # Path to your solution (use forward slashes for Linux)
+      Test_Project_Path: src/TechChallengeFase02.Tests/TechChallengeFase02.Tests.csproj  # Path to your test project
+      Integration_Test_Project_Path: src/TechChallengeFase02.IntegrationTests/TechChallengeFase02.IntegrationTests.csproj  # Path to your integration test project
       
     steps:
     - name: Checkout
@@ -36,22 +36,18 @@ jobs:
 
     # Restore the application and all its dependencies
     - name: Restore dependencies
-      run: dotnet restore $env:Solution_Name
-      env:
-        Solution_Name: ${{ env.Solution_Name }}
+      run: dotnet restore ${{ env.Solution_Name }} 
 
     # Build the application
     - name: Build the application
-      run: msbuild $env:Solution_Name /p:Configuration=$env:Configuration
-      env:
-        Configuration: ${{ matrix.configuration }}
+      run: msbuild ${{ env.Solution_Name }} /p:Configuration=${{ matrix.configuration }} 
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet test $env:Test_Project_Path
-      
+      run: dotnet test ${{ env.Test_Project_Path }} 
+
     - name: Execute Integration tests
-      run: dotnet test $env:Integration_Test_Project_Path    
+      run: dotnet test ${{ env.Integration_Test_Project_Path }} 
 
     # Upload the build artifacts
     - name: Upload build artifacts
