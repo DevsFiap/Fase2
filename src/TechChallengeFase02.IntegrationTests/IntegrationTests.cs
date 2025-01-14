@@ -18,7 +18,7 @@ namespace TechChallengeFase02.IntegrationTests
         {
             _factory = factory;
             _client = _factory.CreateClient();
-            _client.BaseAddress = new Uri("https://fiap-api-f5c7a3duarhhcnfy.eastus2-01.azurewebsites.net"); // Nome do serviço do Docker
+            _client.BaseAddress = new Uri("https://fiap-fase02.azurewebsites.net"); // Nome do serviço do Docker
         }
 
         [Fact]
