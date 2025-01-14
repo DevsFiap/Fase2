@@ -34,10 +34,6 @@ jobs:
       with:
         dotnet-version: 8.0.x
 
-    # Add MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
-    - name: Setup MSBuild.exe
-      uses: microsoft/setup-msbuild@v2
-
     # Restore the application and all its dependencies
     - name: Restore dependencies
       run: dotnet restore $env:Solution_Name
