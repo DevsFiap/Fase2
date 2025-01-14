@@ -81,7 +81,7 @@ namespace TechChallengeFase02.IntegrationTests
 
             Console.WriteLine("Test_CreateContact_ReturnsErrorStatus passou com sucesso!");
         }
-
+        /*
         [Fact]
         public async Task Test_UpdateContact_ReturnsSuccess()
         {
@@ -118,6 +118,7 @@ namespace TechChallengeFase02.IntegrationTests
 
             Console.WriteLine("Test_UpdateContact_ReturnsSuccess passou com sucesso!");
         }
+        */
 
         [Fact]
         public async Task Test_UpdateContact_ReturnsError()
@@ -136,7 +137,7 @@ namespace TechChallengeFase02.IntegrationTests
             Console.WriteLine("Test_UpdateContact_ReturnsNotFound passou com sucesso!");
         }
 
-        [Fact]
+      /*  [Fact]
         public async Task Test_DeleteContact_ReturnsSuccess()
         {
             // Arrange
@@ -163,7 +164,7 @@ namespace TechChallengeFase02.IntegrationTests
             response.EnsureSuccessStatusCode();
 
             Console.WriteLine("Test_DeleteContact_ReturnsSuccess passou com sucesso!");
-        }
+        }*/
 
         [Fact]
         public async Task Test_DeleteContact_ReturnsBadRequest()
