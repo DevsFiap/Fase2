@@ -2,6 +2,7 @@ using TechChallangeFase02.Api.Extensions;
 using TechChallangeFase02.Api.Middlewares;
 using TechChallangeFase02.Infra.IoC.Extensions;
 using TechChallangeFase02.Infra.IoC.Logging;
+using Prometheus;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,6 +15,7 @@ builder.Services.AddDependencyInjection();
 builder.Services.AddAutoMapperConfig();
 builder.Services.AddDbContextConfig(builder.Configuration);
 builder.Services.AddHttpContextAccessor();
+builder.Services.UseHttpClientMetrics();
 
 builder.Logging.ClearProviders();
 builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderConfiguration {
@@ -22,7 +24,10 @@ builder.Logging.AddProvider(new CustomLoggerProvider(new CustomLoggerProviderCon
 
 var app = builder.Build();
 
+
 app.UseSwaggerDoc(app.Environment);
+app.UseMetricServer();
+app.UseHttpMetrics();
 app.UseMiddleware<ExceptionMiddleware>();
 //app.UseAuthentication();
 //app.UseAuthorization();

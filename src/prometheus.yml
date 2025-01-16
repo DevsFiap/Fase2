@@ -2,6 +2,6 @@ global:
   scrape_interval: 15s
 
 scrape_configs:
-  - job_name: 'docker'
+  - job_name: 'monitoring-api'
     static_configs:
-      - targets: ['localhost:8080'] 
+      - targets: ['techchallangefase02.api:8080'] 

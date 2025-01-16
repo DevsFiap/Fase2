@@ -1,55 +1,39 @@
 version: '3.4'
 
 services:
-  sqlserver:
-    image: mcr.microsoft.com/mssql/server:2022-latest
-    container_name: sqlserver
-    environment:
-      - ACCEPT_EULA=Y
-      - SA_PASSWORD=YourStrong!Password
+  techchallangefase02.api:
+    image: ${DOCKER_REGISTRY-}techchallangefase02api
     ports:
-      - "1433:1433"
-    networks:
-      - test-network
-    volumes:
-      - sqlserver-data:/var/opt/mssql
-
-  app:
+      - 8080:8080
     build:
-      context: C:/Projetos/Pos/Fase2/src
-      dockerfile: C:/Projetos/Pos/Fase2/src/TechChallangeFase02.Api/Dockerfile
-    depends_on:
-      - sqlserver
+      context: .
+      dockerfile: TechChallangeFase02.Api/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
     networks:
-      - test-network
-    ports:
-    - "8080:80"
-    - "8081:443"
-
+      - mynw
   prometheus:
-    image: prom/prometheus:latest
-    container_name: prometheus
-    volumes:
-      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    image: prom/prometheus
     ports:
       - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
     networks:
-      - test-network
-
+      - mynw
   grafana:
-    image: grafana/grafana:latest
-    container_name: grafana
-    environment:
-      - GF_SECURITY_ADMIN_USER=admin
-      - GF_SECURITY_ADMIN_PASSWORD=admin
+    image: grafana/grafana
     ports:
       - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - ./grafana:/var/lib/grafana
+    depends_on:
+      - prometheus
     networks:
-      - test-network
-
+      - mynw
 networks:
-  test-network:
-    driver: bridge
-
-volumes:
-  sqlserver-data:
+  mynw:
