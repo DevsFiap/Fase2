@@ -29,10 +29,13 @@ app.UseSwaggerDoc(app.Environment);
 app.UseMetricServer();
 app.UseHttpMetrics();
 app.UseMiddleware<ExceptionMiddleware>();
+app.UseRouting();
+app.UseHttpMetrics();
 //app.UseAuthentication();
 //app.UseAuthorization();
 app.UseCorsPolicy();
 app.MapControllers();
+app.MapMetrics();
 app.Run();
 
 public partial class Program { }
